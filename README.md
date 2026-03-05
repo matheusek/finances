@@ -4,8 +4,9 @@ Simple experiments and tools for stock market analysis.
 
 ## What is in this repo
 
-- `src/stock_performance.py`: reusable script/CLI to fetch close prices, compute variation, and plot price history.
+- `src/stock_performance.py`: reusable script/CLI to fetch close prices, compute performance/risk metrics, and plot price history.
 - `stock_performance.ipynb`: notebook version of the same idea for interactive exploration.
+- `tests/test_stock_performance.py`: unit tests for metrics and report export.
 
 ## Quick start
 
@@ -21,10 +22,46 @@ Run with defaults (`AAPL,GOOG,TSLA`, last 365 days):
 python -m src.stock_performance
 ```
 
+By default this also saves reports under `reports/`:
+
+- `summary_<timestamp>.csv`
+- `close_prices_<timestamp>.csv`
+- `chart_<timestamp>.html`
+
 Custom example:
 
 ```bash
-python -m src.stock_performance --tickers AAPL,MSFT,NVDA --days 180 --save-summary summary.csv
+python -m src.stock_performance --tickers AAPL,MSFT,NVDA --days 180 --output-dir reports/custom
+```
+
+Custom output paths:
+
+```bash
+python -m src.stock_performance \
+  --summary-path reports/summary.csv \
+  --prices-path reports/prices.csv \
+  --chart-path reports/chart.html
+```
+
+Disable auto export:
+
+```bash
+python -m src.stock_performance --no-export
+```
+
+## Metrics included
+
+- current price
+- average price
+- variation (% vs average price)
+- total return
+- annualized volatility (252 trading days)
+- max drawdown
+
+## Run tests
+
+```bash
+pytest -q
 ```
 
 ## Notes
