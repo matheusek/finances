@@ -5,8 +5,10 @@ Simple experiments and tools for stock market analysis.
 ## What is in this repo
 
 - `src/stock_performance.py`: reusable script/CLI to fetch close prices, compute performance/risk metrics, and plot price history.
+- `src/strategies.py`: strategy signals (`trend_following_signal`, `rsi_multi_timeframe_signal`).
 - `stock_performance.ipynb`: notebook version of the same idea for interactive exploration.
 - `tests/test_stock_performance.py`: unit tests for metrics and report export.
+- `tests/test_strategies.py`: unit tests for multiple strategy signal generators.
 - `docs/ROADMAP.md`: planned evolution by phase.
 
 ## Quick start
