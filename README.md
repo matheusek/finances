@@ -7,6 +7,7 @@ Simple experiments and tools for stock market analysis.
 - `src/stock_performance.py`: reusable script/CLI to fetch close prices, compute performance/risk metrics, and plot price history.
 - `stock_performance.ipynb`: notebook version of the same idea for interactive exploration.
 - `tests/test_stock_performance.py`: unit tests for metrics and report export.
+- `docs/ROADMAP.md`: planned evolution by phase.
 
 ## Quick start
 
@@ -68,3 +69,7 @@ pytest -q
 
 - Data source: `yfinance`
 - This project is educational and not financial advice.
+
+## Roadmap
+
+- See [docs/ROADMAP.md](docs/ROADMAP.md)
